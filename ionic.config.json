@@ -1,0 +1,7 @@
+{
+  "name": "hablando",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
