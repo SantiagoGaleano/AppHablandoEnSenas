@@ -11,8 +11,18 @@
   <h3>Ionic Menu Starter</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    prueba
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+  <video  style="width:50%" autoplay loop   src="{{currentVideo?.video}}" >
+      <!-- <source type="video/mp4" /> -->
+  </video>
+
+  <button (click) = "isAnswerCorrect(currentVideo?.respuesta)">
+    {{currentVideo?.respuesta}}
+    <!-- en esta parte, cuando no el valor se obtiene después de declarar la variable se usa '?' para decirle a angular que puede tener un valor y que no debe mostrar nada -->
+  </button>
+  <!-- Ya lo estoy corriendo-->
 </ion-content>
+
