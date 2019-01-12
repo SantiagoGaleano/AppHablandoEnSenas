@@ -1,3 +1,9 @@
+import { SaludosTutoPage } from './../pages/saludos-tuto/saludos-tuto';
+import { MesesTutoPage } from './../pages/meses-tuto/meses-tuto';
+import { InfoPersonalTutoPage } from './../pages/info-personal-tuto/info-personal-tuto';
+import { DiasTutoPage } from './../pages/dias-tuto/dias-tuto';
+import { ColoresTutoPage } from './../pages/colores-tuto/colores-tuto';
+import { AbcTutoPage } from './../pages/abc-tuto/abc-tuto';
 import { TutorialesPage } from './../pages/tutoriales/tutoriales';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,9 +23,14 @@ import {ScreenOrientation } from '@ionic-native/screen-orientation';
   declarations: [
     MyApp,
     HomePage,
-
     ServiciosPage,
-    TutorialesPage
+    TutorialesPage,
+    AbcTutoPage,
+    ColoresTutoPage,
+    DiasTutoPage,
+    InfoPersonalTutoPage,
+    MesesTutoPage,
+    SaludosTutoPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,13 @@ import {ScreenOrientation } from '@ionic-native/screen-orientation';
     MyApp,
     HomePage,
     ServiciosPage,
-    TutorialesPage
+    TutorialesPage,
+    AbcTutoPage,
+    ColoresTutoPage,
+    DiasTutoPage,
+    InfoPersonalTutoPage,
+    MesesTutoPage,
+    SaludosTutoPage
   ],
   providers: [
     StatusBar,

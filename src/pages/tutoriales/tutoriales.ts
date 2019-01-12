@@ -1,3 +1,5 @@
+import { AbcTutoPage } from './../abc-tuto/abc-tuto';
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
@@ -28,5 +30,34 @@ export class TutorialesPage {
      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
   }
+
+  atras() {
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  goAbc(){
+
+    this.navCtrl.push(AbcTutoPage);
+
+  }
+   goColores(){
+
+   }
+
+   goDias(){
+
+   }
+
+   goInfoPersonal(){
+
+   }
+
+   goMeses(){
+
+   }
+
+   goSaludos(){
+
+   }
 
 }
