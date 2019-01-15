@@ -1,4 +1,11 @@
 import { AbcTutoPage } from './../abc-tuto/abc-tuto';
+import {ColoresTutoPage} from './../colores-tuto/colores-tuto';
+import {DiasTutoPage} from './../dias-tuto/dias-tuto';
+import {MesesTutoPage} from './../meses-tuto/meses-tuto';
+import {InfoPersonalTutoPage} from './../info-personal-tuto/info-personal-tuto';
+import {SaludosTutoPage} from './../saludos-tuto/saludos-tuto';
+
+
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -22,13 +29,21 @@ export class TutorialesPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TutorialesPage');
-     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
 
   }
 
-  ionViewWillLeave(){
-     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+  // ionViewWillLeave(){
+  //    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 
+  // }
+
+  // ionViewDidEnter(){
+  //   this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
+  // }
+
+  ionViewWillEnter() {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
   }
 
   atras() {
@@ -41,22 +56,31 @@ export class TutorialesPage {
 
   }
    goColores(){
+     this.navCtrl.push(ColoresTutoPage);
 
    }
 
    goDias(){
+     this.navCtrl.push(DiasTutoPage);
 
    }
 
    goInfoPersonal(){
+    this.navCtrl.push(InfoPersonalTutoPage);
+
+
 
    }
 
    goMeses(){
+    this.navCtrl.push(MesesTutoPage);
+
 
    }
 
    goSaludos(){
+    this.navCtrl.push(SaludosTutoPage);
+
 
    }
 

@@ -1,3 +1,4 @@
+import { ContactoPage } from './../pages/contacto/contacto';
 import { SaludosTutoPage } from './../pages/saludos-tuto/saludos-tuto';
 import { MesesTutoPage } from './../pages/meses-tuto/meses-tuto';
 import { InfoPersonalTutoPage } from './../pages/info-personal-tuto/info-personal-tuto';
@@ -30,7 +31,8 @@ import {ScreenOrientation } from '@ionic-native/screen-orientation';
     DiasTutoPage,
     InfoPersonalTutoPage,
     MesesTutoPage,
-    SaludosTutoPage
+    SaludosTutoPage,
+    ContactoPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import {ScreenOrientation } from '@ionic-native/screen-orientation';
     DiasTutoPage,
     InfoPersonalTutoPage,
     MesesTutoPage,
-    SaludosTutoPage
+    SaludosTutoPage,
+    ContactoPage
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,39 @@
-page-meses-tuto {
 
-}
+
+.botonAtras{
+    text-align:left;
+    width: auto;
+  height: auto;
+  
+  //   background-repeat: no-repeat;
+  background-size:cover;
+  background-color:#105858;
+  border-style:solid;
+  border-width:4px;
+  padding:2px
+  
+  
+  }
+  .svgAtras{
+    .cls-1{fill:#32ab94;}
+    .cls-2{fill:#fff;}
+   }
+  
+  
+  .titulo {
+    font-family: 'Arial Round';
+    font-size: 24px;
+    text-align: center;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  @font-face {
+    font-family: 'Arial Round';
+    font-style: bold;
+    font-weight: 700;
+    src: url('../assets/fonts/arialRound.ttf');
+  }
+  

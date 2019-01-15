@@ -1,3 +1,4 @@
+import { ContactoPage } from './../pages/contacto/contacto';
 import { TutorialesPage } from './../pages/tutoriales/tutoriales';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
@@ -29,7 +30,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
 
       { title: 'Nuestros Servicios',component: ServiciosPage},
-      {title: 'Tutoriales', component: TutorialesPage}
+      {title: 'Tutoriales', component: TutorialesPage},
+      {title: 'Contáctenos', component: ContactoPage}
     ];
 
   }

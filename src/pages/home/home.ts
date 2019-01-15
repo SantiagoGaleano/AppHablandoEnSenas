@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {VIDEOS} from  "../../data/datavideos";
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-home',
@@ -12,10 +13,15 @@ export class HomePage {
   currentVideo: any;
   path: Set<number> = new Set();
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private screenOrientation: ScreenOrientation) {
     // Video aleatorio para el inicio
     this.videos = VIDEOS;
     this.currentVideo = this.randomVideo();
+  }
+
+  ionViewDidEnter() {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+
   }
 
 
