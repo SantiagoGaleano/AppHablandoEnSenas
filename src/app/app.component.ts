@@ -8,7 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { ServiciosPage } from '../pages/servicios/servicios';
 
-
+import {PushnotifcationProvider} from '../providers/pushnotifcation/pushnotifcation'
 
 @Component({
   templateUrl: 'app.html'
@@ -22,7 +22,7 @@ export class MyApp {
 
   showSplash=true;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public pushProvider: PushnotifcationProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -41,8 +41,11 @@ export class MyApp {
 
       this.statusBar.show();
       this.splashScreen.hide();
+      this.pushProvider.init_notifications();
 
     });
+
+   
   }
 
   openPage(page) {
