@@ -19,6 +19,10 @@ export class HomePage {
     this.currentVideo = this.randomVideo();
   }
 
+
+  vibrate(){
+//     this.vibration.vibration(1000);
+// }
   ionViewDidEnter() {
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
 

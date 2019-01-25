@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ModalSolucionesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Soluciones Empresariales</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()">Cerrar</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header >
+
+            <iframe width="100%" height="210px" [src]="trustedVideoUrl ? trustedVideoUrl : null"
+            (load)="trustedVideoUrl ? handleIFrameLoadEvent() : null" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; muted" allowfullscreen></iframe>
+        </ion-card-header>
+
+        <ion-card-content style="text-align: justify">
+            <ion-card-title >Soluciones Empresariales</ion-card-title>
+            <p>Capacitación del talento humano, charlas de sensibilización y protocolo para la atención del ciudadano con discapacidad.</p>
+            <p>Asesoría y acompañamiento para la inclusión laboral de la persona sorda.  </p>
+            <p>Respuesta a los PQRS dando cumplimiento al Decreto 1166 artículo 2.2.3.12.9 de 19 de julio de 2016 (Peticiones verbales en otra lengua nativa o dialecto oficial de Colombia).   </p>
+            <p>Validación por parte de personas ciegas y sordas de documentos en Braille y piezas audiovisuales en Lengua de Señas Colombiana</p>
+          </ion-card-content>
+      </ion-card>
+
+</ion-content>

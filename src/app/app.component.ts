@@ -34,6 +34,7 @@ export class MyApp {
       {title: 'Contáctenos', component: ContactoPage}
     ];
 
+
   }
 
   initializeApp() {
@@ -43,9 +44,10 @@ export class MyApp {
       this.splashScreen.hide();
       this.pushProvider.init_notifications();
 
+
     });
 
-   
+
   }
 
   openPage(page) {

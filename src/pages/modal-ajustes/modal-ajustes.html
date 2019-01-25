@@ -1,0 +1,39 @@
+<!--
+  Generated template for the ModalAjustesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ajustes Razonables</ion-title>
+    <ion-buttons end>
+        <button ion-button (click)="closeModal()">Cerrar</button>
+      </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header >
+
+            <iframe width="100%" height="210px" [src]="trustedVideoUrl ? trustedVideoUrl : null"
+            (load)="trustedVideoUrl ? handleIFrameLoadEvent() : null" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; muted" allowfullscreen></iframe>
+        </ion-card-header>
+
+        <ion-card-content style="text-align: justify">
+            <ion-card-title >Ajustes Razonables
+              </ion-card-title>
+              <p>Diseño de señalética accesible (LSC, alto relieve, inglés, Braille).</p>
+              <p>Actualización de señalética existente incluyendo Lengua de Señas Colombiana y Braille.</p>
+              <p>Asesoría y diseño de páginas web accesibles: Con los criterios de accesibilidad de acuerdo a la NTC5854 cuyo objeto es "Establecer los requisitos de accesibilidad que son aplicables a las páginas web, que se presentan agrupados en tres (3) niveles de conformidad: A,AA,AAA".
+                </p>
+              <p>Adaptación de puestos de trabajo existentes para usuarios con discapacidad.</p>
+              <p>Diseño y fabricación de mobiliario y estaciones de trabajo para usuarios con discapacidad.</p>
+          </ion-card-content>
+      </ion-card>
+</ion-content>

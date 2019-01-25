@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ModalProvisionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Provisión de Intérpretes
+      </ion-title>
+      <ion-buttons end>
+          <button ion-button (click)="closeModal()">Cerrar</button>
+        </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header >
+
+            <iframe width="100%" height="210px" [src]="trustedVideoUrl ? trustedVideoUrl : null"
+            (load)="trustedVideoUrl ? handleIFrameLoadEvent() : null" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; muted" allowfullscreen></iframe>
+        </ion-card-header>
+
+        <ion-card-content style="text-align: justify">
+            <ion-card-title >Provisión de Intérpretes
+              </ion-card-title>
+              Entendiendo la importancia de la comunicación efectiva de sus eventos, ideas y/o productos, proveemos intérpretes de Lengua de Señas Colombiana. Nuestro equipo de trabajo es altamente capacitado, con reconocimiento ante la Comunidad Sorda y con gran experiencia, lo que garantiza fidelidad y calidad en la información transmitida.
+
+            </ion-card-content>
+      </ion-card>
+</ion-content>

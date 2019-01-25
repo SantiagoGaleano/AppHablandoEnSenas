@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireList, AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
+import { AlertController } from 'ionic-angular';
+import { MyValidators } from './../../validators/validators';
+
+
 
 /**
  * Generated class for the ContactoPage page.
@@ -21,21 +25,23 @@ export class ContactoPage {
   myForm: FormGroup;
   tasksRef: AngularFireList<any>;
   tasks: Observable<any[]>;
+  formularioUsuario:FormGroup;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,
-    public database: AngularFireDatabase) {
+    public database: AngularFireDatabase,private alertCtrl: AlertController,
+    private fb: FormBuilder) {
 
-    this.tasksRef = this.database.list('tasks');
+    this.tasksRef = this.database.list('Informacion');
     this.tasks = this.tasksRef.snapshotChanges()
     .map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
-    this.myForm = this.createMyForm();
+    this.buildForm();
   }
 
   saveData(){
-    console.log(this.myForm.value);
+    console.log(this.formularioUsuario.value);
   }
 
 
@@ -46,27 +52,60 @@ export class ContactoPage {
 
 
 
-  private createMyForm(){
 
 
-    return this.formBuilder.group({
-      name: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      mensaje:['',Validators.required]
-
+  buildForm() {
+    /**
+      * @description Asignamos a la propiedad "formularioUsuario" los campos que se van a controlar de la vista
+      */
+    this.formularioUsuario = this.fb.group({
+      nombre:['',[Validators.required,Validators.maxLength(30)]],
+      direccion:['',[Validators.required,Validators.minLength(5),Validators.maxLength(100)]],
+      correo:['',[Validators.required,Validators.email]],
+      tipo_contacto:['Telefono',[Validators.required]],
+      numero_contacto:['',[Validators.required, MyValidators.checkPhoneSize]],
+      mensaje:['',[Validators.required,Validators.maxLength(200)]],
     });
-    }
+
+    this.formularioUsuario.get('tipo_contacto')
+    .valueChanges
+    .subscribe(value => {
+      console.log(value);
+      if (value === 'Telefono') {
+        const validators = [Validators.required, MyValidators.checkPhoneSize];
+        this.formularioUsuario.get('numero_contacto').setValidators(validators);
+      }else {
+        const validators = [Validators.required, MyValidators.checkCellPhoneSize];
+        this.formularioUsuario.get('numero_contacto').setValidators(validators);
+      }
+      this.formularioUsuario.updateValueAndValidity();
+    });
+  }
 
 
 
     enviarFormulario(){
+
       this.tasksRef.push({
-        nombre: this.myForm.value.name,
-        apellido: this.myForm.value.lastName,
-        correo:this.myForm.value.email,
-        mensaje:this.myForm.value.mensaje
+
+        nombre: this.formularioUsuario.value.nombre,
+        direccion:this.formularioUsuario.value.direccion,
+
+        telefono:this.formularioUsuario.value.numero_contacto,
+        correo:this.formularioUsuario.value.correo,
+        mensaje:this.formularioUsuario.value.mensaje
       });
+
+
+    }
+
+    presentAlert() {
+      let alert = this.alertCtrl.create({
+        title: 'Mensaje Enviado',
+        subTitle: 'Pronto nos pondremos en contacto',
+        buttons: ['Ok']
+      });
+      alert.present();
     }
 
     }
