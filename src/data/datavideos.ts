@@ -109,27 +109,27 @@ export const VIDEOS: {
 
     {
       video:"../assets/videos/letraV.mp4",
-      respuesta: "F"
+      respuesta: "V"
     },
 
     {
       video:"../assets/videos/letraW.mp4",
-      respuesta: "F"
+      respuesta: "W"
     },
 
     {
       video:"../assets/videos/letraX.mp4",
-      respuesta: "F"
+      respuesta: "X"
     },
 
     {
       video:"../assets/videos/letraY.mp4",
-      respuesta: "F"
+      respuesta: "Y"
     },
 
     {
       video:"../assets/videos/letraZ.mp4",
-      respuesta: "F"
+      respuesta: "Z"
     }
 ]
 

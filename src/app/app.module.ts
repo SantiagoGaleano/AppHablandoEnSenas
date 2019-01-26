@@ -1,3 +1,4 @@
+import { ComponentsModule } from './../components/components.module';
 import { ModalAccesiblidadPage } from './../pages/modal-accesiblidad/modal-accesiblidad';
 import { ModalProvisionPage } from './../pages/modal-provision/modal-provision';
 import { ModalCapacitacionPage } from './../pages/modal-capacitacion/modal-capacitacion';
@@ -25,6 +26,9 @@ import {ScreenOrientation } from '@ionic-native/screen-orientation';
 import { PushnotifcationProvider } from '../providers/pushnotifcation/pushnotifcation';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { Vibration } from '@ionic-native/vibration';
+
+
 
 /* ... */
 
@@ -57,14 +61,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     ModalAjustesPage,
     ModalAccesiblidadPage,
 
-
-
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig,'notificacioneshablando'),
     AngularFireDatabaseModule,
+    ComponentsModule
+    // Importa este modulo correctamente
+    //listo
 
   ],
   bootstrap: [IonicApp],
@@ -91,6 +96,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     StatusBar,
     SplashScreen,
     OneSignal,
+    Vibration,
 
 
 
